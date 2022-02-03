@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_201750) do
+ActiveRecord::Schema.define(version: 2022_02_03_152509) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -18,7 +18,20 @@ ActiveRecord::Schema.define(version: 2022_02_02_201750) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "user_id"], name: "index_contacts_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "telephones", force: :cascade do |t|
+    t.integer "phone_number", null: false
+    t.string "phone_type", null: false
+    t.boolean "main_phone", null: false
+    t.integer "contact_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_telephones_on_contact_id"
+    t.index ["main_phone", "contact_id"], name: "index_telephones_on_main_phone_and_contact_id", unique: true, where: "main_phone IS TRUE"
+    t.index ["phone_number"], name: "index_telephones_on_phone_number", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,4 +44,5 @@ ActiveRecord::Schema.define(version: 2022_02_02_201750) do
   end
 
   add_foreign_key "contacts", "users"
+  add_foreign_key "telephones", "contacts"
 end
