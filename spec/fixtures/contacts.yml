@@ -1,0 +1,9 @@
+one:
+  id: 1
+  name: Contact_01
+  user_id: 1
+
+two:
+  id: 2
+  name: Contact_02
+  user_id: 2
