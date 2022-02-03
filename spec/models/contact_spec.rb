@@ -8,27 +8,27 @@ RSpec.describe Contact, type: :model do
       contact = Contact.new( name: "Contact_03", user_id: 1).save
       expect(Contact.all.count).to eq(3)
     end
-
-    context 'data is invalid' do
-      it 'return a validation error when contact name is blank' do
-        contact = Contact.new( birthday: "1990-01-01", user_id: 1 )
-        expect(contact).to be_invalid
-      end
-  
-      it 'return a validation error when contact name has already been taken for another contact on that user' do
-        contact = Contact.new( name: "Contact_01", user_id: 1 )
-        expect(contact).to be_invalid
-      end
-
-      it 'return a validation error when user doesn\'t exist' do
-        contact = Contact.new( name: "Contact_01", user_id: 8 )
-        expect(contact).to be_invalid
-      end
-  
-      it 'return a validation error when user_id is blank' do
-        contact = Contact.new( name: "Contact_01" )
-        expect(contact).to be_invalid
-      end
-    end
   end
+
+  context 'data is invalid' do
+    it 'return a validation error when contact name is blank' do
+      contact = Contact.new( birthday: "1990-01-01", user_id: 1 )
+      expect(contact).to be_invalid
+    end
+
+    it 'return a validation error when contact name has already been taken for another contact on that user' do
+      contact = Contact.new( name: "Contact_01", user_id: 1 )
+      expect(contact).to be_invalid
+    end
+
+    it 'return a validation error when trying to assign a contact to a user that doesn\'t exist' do
+      contact = Contact.new( name: "Contact_01", user_id: 8 )
+      expect(contact).to be_invalid
+    end
+
+    it 'return a validation error when not assigned to a user' do
+      contact = Contact.new( name: "Contact_01" )
+      expect(contact).to be_invalid
+    end
+  end  
 end
