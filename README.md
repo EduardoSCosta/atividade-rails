@@ -1,24 +1,45 @@
-# README
+# atividade-rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installing
 
-Things you may want to cover:
+### To run this project you will need:
 
-* Ruby version
+- RVM
+- Ruby 3.1.0
+- Bundler 2.3.5
+- Rails 6.1.4.4
 
-* System dependencies
+To install RVM, follow the instructions for your operational system [here](https://rvm.io/rvm/install).
 
-* Configuration
+Now you need to install Ruby 3.1.0 through it, to do this, run:
+```bash
+rvm install 3.1.0
+```
 
-* Database creation
+To install Bundler 2.3.5, run:
+```bash
+gem install bundler -v 2.3.5
+```
 
-* Database initialization
+To install Rails 6.1.4.4, run:
+```bash
+gem install rails -v 6.1.4.4
+```
+#
 
-* How to run the test suite
+## Running
 
-* Services (job queues, cache servers, search engines, etc.)
+To install the gems, use: 
+```bash
+bundle install
+```
 
-* Deployment instructions
+To start interacting with the database, use: 
+```bash
+bin/rails c
+```
 
-* ...
+To run the tests, use: 
+```bash
+bin/rails spec
+```
