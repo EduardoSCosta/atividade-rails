@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   fixtures :users
 
   context 'data is valid' do
-    it 'User have a count of 2' do
+    it 'User have a count of 3 after saving a new entrie' do
       user = User.new( name: "User_03", age: 21, bio: "Lorem Ipsum" ).save
       expect(User.all.count).to eq(3)
     end
