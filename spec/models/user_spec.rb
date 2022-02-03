@@ -11,12 +11,12 @@ RSpec.describe User, type: :model do
   end
 
   context 'data is invalid' do
-    it 'return a error when user name is blank' do
+    it 'return a validation error when user name is blank' do
       user = User.new( bio: "Lorem Ipsum" )
       expect(user).to be_invalid
     end
 
-    it 'return a error when user name has already been taken' do
+    it 'return a validation error when user name has already been taken' do
       user = User.new( name: "User_01" )
       expect(user).to be_invalid
     end
