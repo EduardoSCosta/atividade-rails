@@ -1,0 +1,27 @@
+one:
+  id: 1
+  phone_number: 123456789
+  phone_type: home
+  main_phone: true
+  contact_id: 1
+
+two:
+  id: 2
+  phone_number: 987654321
+  phone_type: cellphone
+  main_phone: false
+  contact_id: 1
+
+three:
+  id: 3
+  phone_number: 123789456
+  phone_type: home
+  main_phone: true
+  contact_id: 2
+
+four:
+  id: 4
+  phone_number: 987321654
+  phone_type: cellphone
+  main_phone: false
+  contact_id: 2
