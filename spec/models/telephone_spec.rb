@@ -31,7 +31,7 @@ RSpec.describe Telephone, type: :model do
       expect(telephone).to be_invalid
     end
 
-    it 'return a validation error when the phone_number has already been taken' do
+    it 'return a validation error when the phone_number has already been taken by that contact' do
       telephone = Telephone.new( phone_number: 123456789, phone_type: "home", main_phone: false, contact_id: 1 )
       expect(telephone).to be_invalid
     end
