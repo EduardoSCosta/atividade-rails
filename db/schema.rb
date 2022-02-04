@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_152509) do
+ActiveRecord::Schema.define(version: 2022_02_04_154012) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_02_03_152509) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["contact_id"], name: "index_telephones_on_contact_id"
     t.index ["main_phone", "contact_id"], name: "index_telephones_on_main_phone_and_contact_id", unique: true, where: "main_phone IS TRUE"
-    t.index ["phone_number"], name: "index_telephones_on_phone_number", unique: true
+    t.index ["phone_number", "contact_id"], name: "index_telephones_on_phone_number_and_contact_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
