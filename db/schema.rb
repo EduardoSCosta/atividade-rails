@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_154012) do
   end
 
   create_table "telephones", force: :cascade do |t|
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "phone_type", null: false
     t.boolean "main_phone", null: false
     t.integer "contact_id", null: false
