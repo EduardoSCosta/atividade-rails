@@ -1,3 +1,16 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+thead > .index__tr:nth-child(odd) {
+  background-color: var(--blue-600);
+  color: var(--white);
+}
+
+tbody > .index__tr:nth-child(odd) {
+  background-color: var(--gray-300);
+}
+
+tbody > .index__tr:nth-child(even) {
+  background-color: var(--white);
+}
