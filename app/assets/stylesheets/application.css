@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+ :root {
+  --space-sm: 12px;
+  --space-md: 24px;
+  --space-lg: 36px;
+
+  --font-size-sm: 16px;
+  --font-size-md: 24px;
+  --font-size-lg: 32px;
+
+  --blue-600: #252a50;
+  --gray-100: #f8f8f8;
+  --gray-300: #c4c4c4;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gray-100);
+}
+
+table {
+  padding-top: var(--space-lg);
+  margin: 0 auto;
+  border-spacing: 0;
+  font-size: var(--font-size-md);
+}
+
+td, th {
+  padding: var(--space-sm);
+  text-align: center;
+}
+
+.page__title {
+  text-align: center;
+  padding-top: var(--space-sm);
+}
