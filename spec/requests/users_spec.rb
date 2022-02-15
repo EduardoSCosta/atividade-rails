@@ -8,9 +8,9 @@ RSpec.describe "Users", type: :request do
     end
 
     it "returns user list" do
-      user = User.all
+      users = User.all
       get "/users"
-      expect(assigns(:users)).to eq(user)
+      expect(assigns(:users)).to eq(users)
     end    
   end
 
