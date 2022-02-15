@@ -6,6 +6,12 @@ RSpec.describe "Users", type: :request do
       get "/users"
       expect(response).to have_http_status(:success)
     end
+
+    it "returns user list" do
+      user = User.all
+      get "/users"
+      expect(assigns(:users)).to eq(user)
+    end    
   end
 
   describe "GET /show" do
