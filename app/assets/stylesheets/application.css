@@ -27,8 +27,13 @@
 
   --blue-400: #38428d;
   --blue-600: #252a50;
+
+  --green-100: #6cdb5d;
+
   --gray-100: #f8f8f8;
   --gray-300: #c4c4c4;
+
+  --black: #000000;
   --white: #ffffff;
 }
 
@@ -41,6 +46,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -59,7 +68,7 @@ p {
 }
 
 table {
-  padding-top: var(--space-lg);
+  padding-top: var(--space-sm);
   margin: 0 auto;
   border-spacing: 0;
   font-size: var(--font-size-md);
@@ -75,7 +84,6 @@ textarea {
 }
 
 .button {
-  background-color: transparent;
   border: none;
   border-radius: 10px;
   width: 150px;
@@ -83,14 +91,14 @@ textarea {
   cursor: pointer;
 }
 
-.form__button {
+.button--form {
   background-color: var(--blue-400);
   color: var(--white);
   font-weight: bold;
   transition: filter 0.2s;
 }
 
-.form__button:hover {
+.button--form:hover {
   filter: brightness(1.4);
 }
 
