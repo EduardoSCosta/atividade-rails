@@ -7,15 +7,17 @@
       <th>Age</th>
       <th>Total contacts</th>
       <th>Total telephones</th>
+      <th>Show</th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.map do |user| %>
       <tr class="index__tr">
         <td><%= user.name %></td>
         <td><%= user.age %></td>
         <td><%= user.contacts.size %></td>
         <td><%= user.telephones.size %></td>
+        <td><a href=<%= "users/#{user.id}" %>>show</a></td>
       </tr>
     <% end %>
   </tbody>
