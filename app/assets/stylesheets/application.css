@@ -19,10 +19,13 @@
   --space-md: 24px;
   --space-lg: 36px;
 
+  --line-height-md: 1.5;
+
   --font-size-sm: 16px;
   --font-size-md: 24px;
   --font-size-lg: 32px;
 
+  --blue-400: #38428d;
   --blue-600: #252a50;
   --gray-100: #f8f8f8;
   --gray-300: #c4c4c4;
@@ -44,8 +47,15 @@ body {
   background-color: var(--gray-100);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-lg);
+}
+
 p {
-  line-height: 1.5;
+  line-height: var(--line-height-md);
 }
 
 table {
@@ -58,6 +68,48 @@ table {
 td, th {
   padding: var(--space-sm);
   text-align: center;
+}
+
+textarea {
+  resize: none;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.form__button {
+  background-color: var(--blue-400);
+  color: var(--white);
+  font-weight: bold;
+  transition: filter 0.2s;
+}
+
+.form__button:hover {
+  filter: brightness(1.4);
+}
+
+.form__input {
+  min-width: 400px;
+  margin-bottom: var(--space-md);
+  border: 2px solid var(--gray-300);
+  border-radius: 5px;
+  height: 40px;
+  padding-left: var(--space-sm);
+}
+
+.form__input--bio {
+  padding-top: var(--space-sm);
+  height: 150px;
+}
+
+.form__label {
+  line-height: var(--line-height-md);
 }
 
 .page__title {
