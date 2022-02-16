@@ -44,6 +44,10 @@ body {
   background-color: var(--gray-100);
 }
 
+p {
+  line-height: 1.5;
+}
+
 table {
   padding-top: var(--space-lg);
   margin: 0 auto;

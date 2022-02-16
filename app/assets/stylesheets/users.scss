@@ -14,3 +14,43 @@ tbody > .index__tr:nth-child(odd) {
 tbody > .index__tr:nth-child(even) {
   background-color: var(--white);
 }
+
+.user__description {
+  padding-left: var(--space-lg);
+  margin-top: var(--space-md);
+  font-size: var(--font-size-md);
+}
+
+.user__contacts__title {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.user__contacts__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+  margin-top: var(--space-lg);
+  justify-items: center;
+  grid-gap: var(--space-sm);
+  max-width: 700px;
+}
+
+.user__contact_item {
+  background-color: var(--white);
+  border-radius: 10px;  
+  min-width: 120px;
+  min-height: 150px;
+}
+
+.user__contact__name {
+  text-align: center;
+  color: var(--white);
+  background-color: var(--blue-600);
+  padding: var(--space-sm);
+  border-radius: 10px 10px 0 0;
+}
+
+.user__contact__phone {
+  padding-left: var(--space-sm);
+}
