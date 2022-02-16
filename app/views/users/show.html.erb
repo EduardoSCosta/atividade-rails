@@ -5,11 +5,11 @@
 </div>
 <h2 class="user__contacts__title">Contacts</h2>
 <div class="user__contacts__grid">
-  <% @user_contacts.map do |contact| %>
+  <% @user.contacts.map do |contact| %>
     <div class="user__contact_item">
       <h3 class="user__contact__name"><%= contact.name %></h3>
-      <% contact.telephones.pluck(:phone_number).map do |phone_number| %>
-        <p class="user__contact__phone"><%= phone_number %></p>
+      <% contact.telephones.map do |telephone| %>
+        <p class="user__contact__phone"><%= telephone.phone_number %></p>
       <% end %>
     </div>
   <% end %>
