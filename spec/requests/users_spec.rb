@@ -24,7 +24,7 @@ RSpec.describe "Users", type: :request do
 
     it "returns a user" do
       user = User.first
-      get "/users/#{user.id}"
+      get user_path(user)
       expect(assigns(:user)).to eq(user)
     end
   end
