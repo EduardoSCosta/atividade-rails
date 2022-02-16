@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @user_contacts = @user.contacts.all
   end
 
   def new
