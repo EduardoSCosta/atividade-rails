@@ -3,6 +3,11 @@
   <p class="user__age"><strong>Age:</strong> <%= @user.age %></p>
   <p class="user__bio"><strong>Biography:</strong> <%= @user.bio %></p>
 </div>
+
+<button class="button button--edit">
+  <%= link_to 'EDIT', user_edit_path(@user), class: "button__link" %>
+</button>
+
 <h2 class="user__contacts__title">Contacts</h2>
 <div class="user__contacts__grid">
   <% @user.contacts.map do |contact| %>
