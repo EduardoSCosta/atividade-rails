@@ -28,6 +28,8 @@
   --blue-400: #38428d;
   --blue-600: #252a50;
 
+  --red-100: #ff5e5e;
+
   --green-100: #6cdb5d;
 
   --gray-100: #f8f8f8;
@@ -49,6 +51,7 @@
 }
 
 a {
+  color: var(--blue-400);
   text-decoration: none;
 }
 
@@ -85,6 +88,7 @@ textarea {
 
 .button {
   border: none;
+  font-weight: bold;
   border-radius: 10px;
   width: 150px;
   height: 40px;

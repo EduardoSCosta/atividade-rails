@@ -4,29 +4,28 @@
 
 .button--edit {
   background-color: var(--green-100);
-  color: var(--white);
-  font-weight: bold;
   margin: var(--space-lg) 0 0 var(--space-lg);
-  width: 50px;
+}
+
+.button--delete {
+  background-color: var(--red-100);
+  margin: var(--space-lg) 0 0 var(--space-sm);
+}
+
+.button--user {
   transition: filter 0.2s;
 }
 
-.button--edit:hover {
+.button--user:hover {
   filter: brightness(0.9);
 }
 
-.button--new-user {
+.button--user--new {
   display: block;
   background-color: var(--green-100);
-  color: var(--white);
-  font-weight: bold;
   margin: var(--space-lg) auto;
-  transition: filter 0.2s;
 }
 
-.button--new-user:hover {
-  filter: brightness(0.9);
-}
 
 .button__link {
   display: flex;
