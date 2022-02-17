@@ -31,31 +31,33 @@ RSpec.describe "Users", type: :request do
 
   describe "GET /new" do
     it "returns http success" do
-      get users_new_path
+      get user_new_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "POST /users" do
-    it "returns http created" do
+    it "returns http found" do
       post users_path, params: {user: {name: "User Test", age: 42, bio: "This is a test biography"}}
       expect(response).to have_http_status(:found)
     end
   end
 
-  # describe "GET /edit" do
-  #   it "returns http success" do
-  #     get "/users/edit"
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET /edit" do
+    it "returns http success" do
+      user = User.first
+      get user_edit_path(user)
+      expect(response).to have_http_status(:success)
+    end
+  end
 
-  # describe "GET /update" do
-  #   it "returns http success" do
-  #     get "/users/update"
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET /update" do
+    it "returns http success" do
+      user = User.first
+      patch user_path(user), params: {user: {name: "User Edit Test"}}
+      expect(response).to have_http_status(:found)
+    end
+  end
 
   # describe "GET /destroy" do
   #   it "returns http success" do
