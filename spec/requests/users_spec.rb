@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe "Users", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      get "/users"
+      get users_path
       expect(response).to have_http_status(:success)
     end
 
     it "returns user list" do
       User.create(name: "Test User")
       users = User.all
-      get "/users"
+      get users_path
       expect(assigns(:users)).to eq(users)
     end    
   end
@@ -31,35 +31,35 @@ RSpec.describe "Users", type: :request do
 
   describe "GET /new" do
     it "returns http success" do
-      get "/users/new"
+      get users_new_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /create" do
     it "returns http success" do
-      get "/users/create"
+      get users_create_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /edit" do
     it "returns http success" do
-      get "/users/edit"
+      get users_edit_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /update" do
     it "returns http success" do
-      get "/users/update"
+      get users_update_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /destroy" do
     it "returns http success" do
-      get "/users/destroy"
+      get users_destroy_path
       expect(response).to have_http_status(:success)
     end
   end
