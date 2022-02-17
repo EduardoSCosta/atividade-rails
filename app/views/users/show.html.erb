@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 class="page__title"><%= @user.name %></h1>
+<div class="user__description">
+  <p class="user__age"><strong>Age:</strong> <%= @user.age %></p>
+  <p class="user__bio"><strong>Biography:</strong> <%= @user.bio %></p>
+</div>
+<h2 class="user__contacts__title">Contacts</h2>
+<div class="user__contacts__grid">
+  <% @user.contacts.map do |contact| %>
+    <div class="user__contact_item">
+      <h3 class="user__contact__name"><%= contact.name %></h3>
+      <% contact.telephones.map do |telephone| %>
+        <p class="user__contact__phone"><%= telephone.phone_number %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
