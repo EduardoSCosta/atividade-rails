@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
-  describe "GET /index" do
+  describe "GET /users" do
     it "returns http success" do
       get users_path
       expect(response).to have_http_status(:success)
@@ -15,7 +15,7 @@ RSpec.describe "Users", type: :request do
     end    
   end
 
-  describe "GET /show" do
+  describe "GET /users/:id" do
     it "returns http success" do
       user = User.first
       get user_path(user)
@@ -36,10 +36,10 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /create" do
-    it "returns http success" do
-      get users_create_path
-      expect(response).to have_http_status(:success)
+  describe "POST /users" do
+    it "returns http created" do
+      post "/users", params: {user: {name: "User Test", age: 42, bio: "This is a test biography"}}
+      expect(response).to have_http_status(:found)
     end
   end
 

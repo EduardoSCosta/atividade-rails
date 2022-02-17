@@ -1,2 +1,22 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1 class="page__title">Create a new user</h1>
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name, class: "form__label" %><br>
+    <%= form.text_field :name, required: true, class: "form__input form__input--name" %>
+  </div>
+
+  <div>
+    <%= form.label :age, class: "form__label" %><br>
+    <%= form.number_field :age, class: "form__input form__input--age" %>
+  </div>
+
+  <div>
+    <%= form.label :bio, class: "form__label" %><br>
+    <%= form.text_area :bio, class: "form__input form__input--bio" %>
+  </div>
+
+  <div>
+    <%= form.submit value: "SAVE", class: "button button--form" %>
+  </div>
+<% end %>
