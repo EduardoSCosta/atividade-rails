@@ -29,7 +29,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /new" do
+  describe "GET /users/new" do
     it "returns http success" do
       get user_new_path
       expect(response).to have_http_status(:success)
@@ -43,7 +43,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /edit" do
+  describe "GET /users/:id/edit" do
     it "returns http success" do
       user = User.first
       get user_edit_path(user)
@@ -51,19 +51,19 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "PATCH /update" do
-    it "returns http success" do
+  describe "PATCH /users" do
+    it "returns http found" do
       user = User.first
       patch user_path(user), params: {user: {name: "User Edit Test"}}
       expect(response).to have_http_status(:found)
     end
   end
 
-  # describe "GET /destroy" do
-  #   it "returns http success" do
-  #     get "/users/destroy"
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
-
+  describe "DELETE /users" do
+    it "returns http found" do
+      user = User.first
+      delete user_path(user)
+      expect(response).to have_http_status(:found)
+    end
+  end
 end
