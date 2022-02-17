@@ -51,7 +51,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /update" do
+  describe "PATCH /update" do
     it "returns http success" do
       user = User.first
       patch user_path(user), params: {user: {name: "User Edit Test"}}
