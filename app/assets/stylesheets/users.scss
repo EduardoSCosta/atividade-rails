@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.button--edit {
+  background-color: var(--green-100);
+  color: var(--white);
+  font-weight: bold;
+  margin: var(--space-lg) 0 0 var(--space-lg);
+  width: 50px;
+  transition: filter 0.2s;
+}
+
+.button--edit:hover {
+  filter: brightness(0.9);
+}
+
 .button--new-user {
   display: block;
   background-color: var(--green-100);
