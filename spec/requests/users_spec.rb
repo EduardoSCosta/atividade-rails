@@ -41,6 +41,18 @@ RSpec.describe "Users", type: :request do
       post users_path, params: {user: {name: "User Test", age: 42, bio: "This is a test biography"}}
       expect(response).to have_http_status(:found)
     end
+
+    it "successful create a user" do      
+      expect{
+        post users_path, params: {user: {name: "User Test", age: 42, bio: "This is a test biography"}}
+      }.to change(User, :count).by(1)
+    end
+
+    it "does not create a user" do      
+      expect{
+        post users_path, params: {user: {age: 42, bio: "This is a test biography"}}
+      }.to_not change(User, :count)
+    end
   end
 
   describe "GET /users/:id/edit" do
@@ -51,7 +63,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "PATCH /users" do
+  describe "PATCH /users/:id" do
     it "returns http found" do
       user = User.first
       patch user_path(user), params: {user: {name: "User Edit Test"}}
@@ -59,7 +71,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "DELETE /users" do
+  describe "DELETE /users/:id" do
     it "returns http found" do
       user = User.first
       delete user_path(user)
