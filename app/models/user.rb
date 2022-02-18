@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-  has_many :contacts
-  has_many :telephones, through: :contacts
+  has_many :contacts, dependent: :destroy
+  has_many :telephones, through: :contacts, dependent: :destroy
 end

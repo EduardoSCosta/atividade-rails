@@ -1,5 +1,5 @@
 <h1 class="page__title">Users List</h1>
-<button class="button button--new-user"><%= link_to '+ USER', user_new_path, class: "button__link" %></button>
+<button class="button button--user button--user--new"><%= link_to '+ USER', user_new_path, class: "button__link" %></button>
 
 <table class="index__table">
   <thead class="index__thead">
@@ -10,6 +10,7 @@
       <th>Total telephones</th>
       <th>Show</th>
       <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@
         <td><%= user.telephones.size %></td>
         <td><%= link_to 'show', user_path(user) %></td>
         <td><%= link_to 'edit', user_edit_path(user) %></td>
+        <td><%= link_to 'delete', user_path(user), method: :delete, data: { confirm: "Delete this user?" } %></td>
       </tr>
     <% end %>
   </tbody>
