@@ -42,7 +42,7 @@ RSpec.describe "Users", type: :request do
       expect(response).to have_http_status(:found)
     end
 
-    it "successful create a user" do      
+    it "creates a user" do      
       expect{
         post users_path, params: {user: {name: "User Test", age: 42, bio: "This is a test biography"}}
       }.to change(User, :count).by(1)
@@ -76,6 +76,13 @@ RSpec.describe "Users", type: :request do
       user = User.first
       delete user_path(user)
       expect(response).to have_http_status(:found)
+    end
+
+    it "delete a user" do
+      user = User.first
+      expect{
+        delete user_path(user)
+      }.to change(User, :count).by(-1)
     end
   end
 end
